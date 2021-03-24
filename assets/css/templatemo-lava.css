@@ -1405,6 +1405,15 @@ footer .sub-footer p.foot-menu {
 #loader{
                 display: none;
             }
+.text-center {
+    text-align: center;
+}
+
+.g-recaptcha {
+    display: inline-block;
+    padding: 15px 0 0 0;
+}
+
 /* 
 ---------------------------------------------
 preloader
@@ -1488,3 +1497,5 @@ preloader
     opacity: 0;
   }
 }
+
+

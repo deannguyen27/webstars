@@ -26,7 +26,7 @@ https://templatemo.com/tm-540-lava-landing-page
     <link rel="stylesheet" href="assets/css/templatemo-lava.css">
 
     <link rel="stylesheet" href="assets/css/owl-carousel.css">
-    <script src=’https://www.google.com/recaptcha/api.js’></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 
 <body>
@@ -43,8 +43,8 @@ https://templatemo.com/tm-540-lava-landing-page
     
     <div id="banner-full">
     <div class="header">        
-      <form class="search-form" action="action_page.php">
-          <input type="text" placeholder="Search.." name="search">
+      <form class="search-form" method="get" action="http://search.yahoo.com/search">
+          <input type="text" placeholder="Search.." name="p">
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
 
@@ -75,7 +75,7 @@ https://templatemo.com/tm-540-lava-landing-page
                             <li class="scroll-to-section"><a href="#banner-full" class="menu-item">Home</a></li>
                             <li class="scroll-to-section"><a href="#account" >Account</a></li>                            
                             <li class="scroll-to-section"><a href="#faqs" class="menu-item">FAQs</a></li>
-                            <li class="scroll-to-section"><a href="#contact" class="menu-item">About Us</a></li>
+                            <li class="scroll-to-section"><a href="#aboutus" class="menu-item">About Us</a></li>
                             <li class="scroll-to-section"><a href="#welcome" class="menu-item">Browser Extensions</a></li>
                             <!-- <li class="submenu">
                                 <a href="javascript:;">Contents</a>
@@ -109,24 +109,24 @@ https://templatemo.com/tm-540-lava-landing-page
             <div class="container">
                 <div class="left-text">
                 <div class="row">                    
-                    <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                    <div class=" col-lg-9 col-md-12 col-sm-12 col-xs-12"
                         data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                         <h1>Browser Extensions</h1>
-                        <p>Webstars is a caused base search engine. We donate the majority of the proceeds to<br />various causes, with a focus on supporting causes related to kids. We enable our users<br />to see a beautiful new wallpaper scenery daily on our Chrome extension home tabs.<br />Add the Webstars browser extension to your web Chrome browser and join us in<br />making this world a better place!<br />We have browser extensions available for&nbsp;Chrome&nbsp;and will be available to&nbsp;Edge&nbsp;and<br />Firefox browsers soon.</p>
+                        <p>Webstars is a caused base search engine. We donate the majority of the proceeds to various causes, with a focus on supporting causes related to kids. We enable our users to see a beautiful new wallpaper scenery daily on our Chrome extension home tabs. Add the Webstars browser extension to your web Chrome browser and join us in making this world a better place!<br />We have browser extensions available for Chrome and will be available to Edge and Firefox browsers soon.</p>
                     </div>
-                    <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                    <div class=" col-lg-9 col-md-12 col-sm-12 col-xs-12"
                         data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
 <h3>What does the browser extension do?</h3>
 <strong>The browser extension does three things:</strong><br /><br />
     <ul>
         <li>1. It sets your homepage to Webstars.org</li>
         <li>2. It opens Webstars.org every time you open a new tab</li>
-        <li>3. It sets your default search engine to Webstars.org. This allows you to type any search<br />
+        <li>3. It sets your default search engine to Webstars.org. This allows you to type any search 
         query into your address bar and your search will be executed on Webstars.org.</li>
     </ul>
     <br />
 </div>
-<div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12"
+<div class=" col-lg-9 col-md-12 col-sm-12 col-xs-12"
                         data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
 <h3>How do I install the browser extension?</h3><br />
 <p>Click on the link (goes to Chrome Store page for Webstars) to install Webstars on your browser...<br />
@@ -625,21 +625,24 @@ to use the Tools.
                                     </div>
                                     <div class="col-lg-12">
                                         <fieldset>
-                                            <div class="alert alert-success message_show " style="display: none;" role="alert">
-                                              
-                                            </div>
+                                            <div class="alert alert-success message_show " style="display: none;" role="alert"></div>
+                                            <div class="alert alert-error message_show_err " style="display: none;" role="alert"></div>
                                             <button type="submit" id="form-submit" class="main-button">Send Message
                                                 Now <img id="loader" src="https://res.cloudinary.com/sivadass/image/upload/v1498134389/icons/loader.gif" alt="loading"></button>
                                         </fieldset>
                                     </div>
-                                    <div class="g-recaptcha" data-sitekey="6Leq0oIaAAAAADwqpFPzo2ojB7YzUo4UEzfivxGz"></div>
+                                    <div class="col-lg-12">
+                                        <fieldset class="text-center">
+                                            <div class="g-recaptcha" data-sitekey="6LfGzYkaAAAAAKCcOuLglGpkZTQa03vcXDqu-oPd" ></div>
+                                        </fieldset>
+                                    </div>
                                 </div>
 
                             </form>
                         </div>
                     </div>
                     <!-- ***** Contact Form End ***** -->
-                    <div class="right-content col-lg-6 col-md-12 col-sm-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <div class="right-content col-lg-6 col-md-12 col-sm-12" id="aboutus" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                         <h2>More About <em>Webstars</em></h2>
                         <br /><br />
                         <p>Webstars is a cause based search engine. We donate the majority of the proceeds to
@@ -694,6 +697,7 @@ every search they make while making an impact in the world one search at a time.
     <script type="text/javascript">
         
        // $('#privacy-policy-modal-lg').modal('show');
+       
     </script>
 
 </body>
