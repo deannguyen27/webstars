@@ -74,6 +74,14 @@
 	});
 
 	$(document).ready(function () {
+
+		var classes = ['banner001', 'banner002', 'banner003'];
+	    var randomnumber = Math.floor(Math.random() * classes.length); 
+	    //console.log(classes[randomnumber]);
+	    $("#banner-full").addClass(classes[randomnumber]);   	   
+
+		
+
 		$('a[href^="#welcome"]').addClass('active');
 
 		//smoothscroll
@@ -271,6 +279,8 @@
 				$("#preloader").css("visibility", "hidden").fadeOut();
 			}, 300);
 		});
+
+
 	});
 
 
@@ -291,7 +301,7 @@
 		});
 	}
 
-
+	
 
 })(window.jQuery);
 
@@ -314,6 +324,8 @@ $(function(){
 
   rescaleCaptcha();
   $( window ).resize(function() { rescaleCaptcha(); });
+
+
 
 });
 

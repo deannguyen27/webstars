@@ -230,7 +230,7 @@ form.search-form::after {
 
 
 #banner-full{
-  background-image:url(../images/banner_001.jpeg);
+  
   background-size:cover;
   position:relative;
   height:100vh;
@@ -241,6 +241,17 @@ form.search-form::after {
     transition: background 1s;
 }
 
+#banner-full.banner001{
+  background-image:url(../images/banner_001.jpeg);
+}
+
+#banner-full.banner002{
+  background-image:url(../images/banner_002.jpeg);
+}
+
+#banner-full.banner003{
+  background-image:url(../images/banner_003.jpeg);
+}
 .header{
   position:absolute;
   top:30%;
@@ -1497,5 +1508,3 @@ preloader
     opacity: 0;
   }
 }
-
-
