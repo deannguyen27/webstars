@@ -75,13 +75,16 @@
 
 	$(document).ready(function () {
 
-		var classes = ['banner001', 'banner002', 'banner003'];
-	    var randomnumber = Math.floor(Math.random() * classes.length); 
-	    //console.log(classes[randomnumber]);
-	    $("#banner-full").addClass(classes[randomnumber]);   	   
-
+		var list = new Array();
+		$.getJSON("http://ws.local/assets/images/gallery.json", function(data) {
+		    $.each(data.items, function(i, item) {
+		       
+		        list.push(item.image);
+		    });
+		    let randomnumber = Math.floor(Math.random() * list.length); 		   
+		    $('#banner-full').css('background-image', 'url("' + list[randomnumber] + '")');
+		});
 		
-
 		$('a[href^="#welcome"]').addClass('active');
 
 		//smoothscroll
