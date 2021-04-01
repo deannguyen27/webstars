@@ -77,12 +77,13 @@
 
 		var list = new Array();
 		$.getJSON("assets/images/gallery.json", function(data) {
-		    $.each(data.items, function(i, item) {
-		       
+		    $.each(data.items, function(i, item) {		       
 		        list.push(item.image);
 		    });
-		    let randomnumber = Math.floor(Math.random() * list.length); 		   
-		    $('#banner-full').css('background-image', 'url("' + list[randomnumber] + '")');
+		    var d = new Date();
+  			var n = d.getDate();
+		    
+		    $('#banner-full').css('background-image', 'url("' + list[n-1] + '")');
 		});
 		
 		$('a[href^="#welcome"]').addClass('active');
