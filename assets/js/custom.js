@@ -76,7 +76,7 @@
 	$(document).ready(function () {
 
 		var list = new Array();
-		$.getJSON("http://ws.local/assets/images/gallery.json", function(data) {
+		$.getJSON("assets/images/gallery.json", function(data) {
 		    $.each(data.items, function(i, item) {
 		       
 		        list.push(item.image);
