@@ -942,7 +942,7 @@ about
 .about-item img {
   z-index: 10;
   position: relative;
-  max-width: 80%;
+  max-width: 40%;
   margin-bottom: 4px;
 }
 
