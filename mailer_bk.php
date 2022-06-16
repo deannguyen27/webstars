@@ -6,6 +6,16 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+//Load Composer's autoloader
+require 'vendor/autoload.php';
+$secret = "6LfGzYkaAAAAAAXOZCFSYxQWO7skOQ38O5KSTPTk";
+$recaptcha = new \ReCaptcha\ReCaptcha($secret);
+$resp = $recaptcha->setExpectedHostname($_SERVER['SERVER_NAME'])
+                      ->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);;
+
+if ($resp->isSuccess()) {   
+
+
     //Instantiation and passing `true` enables exceptions
     $mail = new PHPMailer(true);
 
@@ -68,6 +78,9 @@ use PHPMailer\PHPMailer\Exception;
         //echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 
-
+} else {
+    $ret['code'] = 'error';
+    $ret['msg'] = 'Missing verify the captcha.';
+}
 
 echo json_encode($ret);
