@@ -1,10 +1,23 @@
 <?php
 
+require_once('vendor/phpmailer/phpmailer/src/Exception.php');
+require_once('vendor/phpmailer/phpmailer/src/PHPMailer.php');
+require_once('vendor/phpmailer/phpmailer/src/SMTP.php');
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+
+//Load Composer's autoloader
+require 'vendor/autoload.php';
+$secret = "6LfGzYkaAAAAAAXOZCFSYxQWO7skOQ38O5KSTPTk";
+$recaptcha = new \ReCaptcha\ReCaptcha($secret);
+$resp = $recaptcha->setExpectedHostname('webstars.org')
+                      ->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);;
+
+if ($resp->isSuccess()) {   
+
 
     //Instantiation and passing `true` enables exceptions
     $mail = new PHPMailer(true);
@@ -68,6 +81,9 @@ use PHPMailer\PHPMailer\Exception;
         //echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 
-
+} else {
+    $ret['code'] = 'error';
+    $ret['msg'] = 'Missing verify the captcha.';
+}
 
 echo json_encode($ret);
