@@ -1484,7 +1484,7 @@ preloader
 }
 
 .scrollbar { 
-  height: 200px;
+  height: 250px;
   background: inherit;
   overflow-y: scroll;
   margin-bottom: 5px;
